@@ -59,13 +59,12 @@ const ContrastSummary = ({ contrastMatrix }) => {
               style={{ backgroundColor: item.farge2 }}
             />
             {item.kontrastverdi}
-            {console.log(item)}
           </li>
         ))}
       </ul>
 
       <h3>Dårlige kombinasjoner</h3>
-k      <ul>
+      <ul>
         {Object.values(badContrasts).map((item, index) => (
           <li key={"bad" + index}>
             <div

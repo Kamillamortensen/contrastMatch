@@ -53,7 +53,12 @@ function Home() {
 
   return (
     <div className="App">
-      <NavBar></NavBar>
+      <NavBar
+        title="kontrastsjekker"
+        backgroundColor="#1c4259"
+        textColor="#ffffff"
+        topFixed={true}
+      ></NavBar>
       <div className="content">
         <div className="contentGroup">
           <MyColors

@@ -11,10 +11,11 @@ const MyColors = ({ colorList, setColorList }) => {
   };
 
   const removeColorValue = (index) => {
-    setColorList((colorList) => colorList.filter((_, i) => i !== index.index));
+    setColorList((colorList) =>
+      colorList.filter((_, i) => i !== index.index || colorList.length === 2)
+    );
   };
 
-  console.log(colorList);
   return (
     <div className="myColors">
       <div className="headingAndButton">
