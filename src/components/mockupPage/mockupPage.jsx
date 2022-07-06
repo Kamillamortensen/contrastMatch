@@ -2,6 +2,7 @@ import "./mockupPage.css";
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navBar/navBar";
 import { getContrastList } from "../../contrast-calculations";
+import { UndrawBrainstorming } from "react-undraw-illustrations";
 
 const MockupPage = ({ contrastMatrix }) => {
   const [allColorCombos, setAllColorCombos] = useState(
@@ -32,8 +33,8 @@ const MockupPage = ({ contrastMatrix }) => {
         textColor={getColor2()}
         topFixed={false}
       ></NavBar>
-      <div className="helloBlock">
-        <div className="helloItem">
+      <div className="mockupRow">
+        <div className="rowItem-50 textBox">
           <h1
             style={{
               color: getColor1(),
@@ -50,7 +51,17 @@ const MockupPage = ({ contrastMatrix }) => {
             Viser deg hvordan fargene dine påvirker lesbarhet og design!
           </p>
         </div>
-        <div className="helloItem"></div>
+        <div className="rowItem-50">
+          <UndrawBrainstorming
+            primaryColor={getColor1()}
+            secondaryColor={getColor2()}
+            accentColor={getColor2()}
+            height="80%"
+          />
+        </div>
+      </div>
+      <div className="mocupRow">
+        <h1>diverse greier</h1>
       </div>
     </div>
   );
