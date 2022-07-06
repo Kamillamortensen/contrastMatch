@@ -9,7 +9,7 @@ const NavBar = ({ title, backgroundColor, textColor, topFixed }) => {
         backgroundColor: backgroundColor,
         color: textColor,
         top: topFixed ? 0 : "none",
-        position: topFixed ? "fixed" : "relative",
+        position: topFixed ? "fixed" : "static",
       }}
     >
       <div className="title">

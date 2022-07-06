@@ -50,7 +50,8 @@ const MockupPage = ({ contrastMatrix }) => {
               color: getColor1(),
             }}
           >
-            Viser deg hvordan fargene dine påvirker lesbarhet og design!
+            Virker foreløpig bare på de to første fargene. Viser deg hvordan
+            fargene dine påvirker lesbarhet og design!
           </p>
         </div>
         <div className="rowItem-50">
