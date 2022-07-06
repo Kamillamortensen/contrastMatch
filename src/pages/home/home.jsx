@@ -5,6 +5,7 @@ import ContrastTable from "../../components/contrastTable/contrastTable";
 import ContrastSummary from "../../components/contrastSummary/contrastSummary";
 import MockupPage from "../../components/mockupPage/mockupPage";
 import MyColors from "../../components/myColors/myColors";
+import Footer from "../../components/footer/footer";
 import { checkColors } from "../../color-checker";
 
 function Home() {
@@ -74,6 +75,11 @@ function Home() {
           <MockupPage contrastMatrix={contrastMatrix}></MockupPage>
         </div>
       </div>
+      <Footer
+        backgroundColor={"#1c4259"}
+        textColor={"#ffffff"}
+        text={"Kontakt: email@email.no"}
+      />
     </div>
   );
 }

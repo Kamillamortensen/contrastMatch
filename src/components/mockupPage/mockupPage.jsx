@@ -1,6 +1,7 @@
 import "./mockupPage.css";
 import React, { useState, useEffect } from "react";
-import NavBar from "../../components/navBar/navBar";
+import NavBar from "../navBar/navBar";
+import Footer from "../footer/footer";
 import { getContrastList } from "../../contrast-calculations";
 import { UndrawBrainstorming } from "react-undraw-illustrations";
 
@@ -63,6 +64,11 @@ const MockupPage = ({ contrastMatrix }) => {
       <div className="mocupRow">
         <h1>diverse greier</h1>
       </div>
+      <Footer
+        backgroundColor={getColor1()}
+        textColor={getColor2()}
+        text={"this is a footer text"}
+      />
     </div>
   );
 };

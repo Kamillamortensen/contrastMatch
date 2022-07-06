@@ -3,7 +3,7 @@
   width: 70vw;
   height: fit-content;
   min-height: 40vh; /* HARDKODA FOR NÅ, FJERN SENERE  */
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mockupRow {

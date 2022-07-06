@@ -1,7 +1,7 @@
 import "./navBar.css";
 import React, { useState, useEffect } from "react";
 
-const NavBar = ({ title, backgroundColor, textColor, topFixed, width }) => {
+const NavBar = ({ title, backgroundColor, textColor, topFixed }) => {
   return (
     <div
       className="navBar"
@@ -10,7 +10,6 @@ const NavBar = ({ title, backgroundColor, textColor, topFixed, width }) => {
         color: textColor,
         top: topFixed ? 0 : "none",
         position: topFixed ? "fixed" : "relative",
-        width: width,
       }}
     >
       <div className="title">
