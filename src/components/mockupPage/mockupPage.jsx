@@ -62,7 +62,7 @@ const MockupPage = ({ contrastMatrix }) => {
         </div>
       </div>
       <div className="mocupRow">
-        <h1>diverse greier</h1>
+        <h1 className="heig">diverse greier</h1>
       </div>
       <Footer
         backgroundColor={getColor1()}

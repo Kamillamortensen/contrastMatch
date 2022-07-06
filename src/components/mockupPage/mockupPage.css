@@ -4,6 +4,7 @@
   height: fit-content;
   min-height: 40vh; /* HARDKODA FOR NÅ, FJERN SENERE  */
   margin-bottom: 2rem;
+  z-index: -1;
 }
 
 .mockupRow {
@@ -27,4 +28,8 @@
 
 .textBox {
   padding: 3rem;
+}
+
+.heig {
+  height: 300px;
 }
