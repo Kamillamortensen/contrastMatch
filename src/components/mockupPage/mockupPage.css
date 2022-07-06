@@ -1,0 +1,6 @@
+.mockupPage {
+  background-color: #f3f3f3;
+  width: 100vw;
+  height: fit-content;
+  min-height: 40vh; /* HARDKODA FOR NÅ, FJERN SENERE  */
+}

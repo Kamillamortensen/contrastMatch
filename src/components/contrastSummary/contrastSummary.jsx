@@ -65,7 +65,7 @@ const ContrastSummary = ({ contrastMatrix }) => {
       </ul>
 
       <h3>Dårlige kombinasjoner</h3>
-      <ul>
+k      <ul>
         {Object.values(badContrasts).map((item, index) => (
           <li key={"bad" + index}>
             <div

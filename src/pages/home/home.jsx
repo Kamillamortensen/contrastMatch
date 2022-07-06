@@ -1,14 +1,14 @@
 import "./home.css";
 import React, { useEffect, useState } from "react";
 import NavBar from "../../components/navBar/navBar";
-import ColorInput from "../../components/colorInput/colorInput";
 import ContrastTable from "../../components/contrastTable/contrastTable";
 import ContrastSummary from "../../components/contrastSummary/contrastSummary";
+import MockupPage from "../../components/mockupPage/mockupPage";
 import MyColors from "../../components/myColors/myColors";
 import { checkColors } from "../../color-checker";
 
 function Home() {
-  const [colorList, setColorList] = useState(["#000000"]);
+  const [colorList, setColorList] = useState(["#000000", "#00FF00"]); //HARDKODA, FJERN SENERE
   const [tableList, setTableList] = useState([""]);
   const [contrastMatrix, setContrastMatrix] = useState([""].concat(colorList));
 
@@ -66,7 +66,7 @@ function Home() {
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
         </div>
         <div className="contentGroup">
-          <h1>Her kommer visning av komponenter i fargene</h1>
+          <MockupPage contrastMatrix={contrastMatrix}></MockupPage>
         </div>
       </div>
     </div>
