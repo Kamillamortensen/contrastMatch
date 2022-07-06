@@ -39,6 +39,7 @@ const ColorInput = ({
         x
       </button>
       <input
+        className="inputForColor"
         type="color"
         value={colorValue}
         onInput={(e) => {
@@ -48,6 +49,7 @@ const ColorInput = ({
         }}
       ></input>
       <input
+        className="inputForColor"
         type="text"
         id="hex-input"
         maxLength="7"

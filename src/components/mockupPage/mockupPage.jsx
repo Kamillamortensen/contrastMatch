@@ -29,6 +29,7 @@ const MockupPage = ({ contrastMatrix }) => {
   return (
     <div className="mockupPage">
       <NavBar
+        className="mockupNav"
         title="mockup website"
         backgroundColor={getColor1()}
         textColor={getColor2()}
@@ -62,7 +63,36 @@ const MockupPage = ({ contrastMatrix }) => {
         </div>
       </div>
       <div className="mocupRow">
-        <h1 className="heig">diverse greier</h1>
+        <div className="rowItem-50">
+          <form
+            className="mockupForm"
+            style={{
+              backgroundColor: getColor2(),
+            }}
+          >
+            <h1>test form</h1>
+            <div>
+              <input
+                type="checkbox"
+                id="vehicle1"
+                name="vehicle1"
+                value="Bike"
+              />
+              <label for="vehicle1"> Jeg har en katt</label>
+            </div>
+            <div>
+              {" "}
+              <input
+                type="checkbox"
+                id="vehicle1"
+                name="vehicle1"
+                value="Bike"
+              />
+              <label for="vehicle1"> Jeg er fornøyd</label>
+            </div>
+          </form>
+        </div>
+        <div className="rowItem-50"></div>
       </div>
       <Footer
         backgroundColor={getColor1()}
