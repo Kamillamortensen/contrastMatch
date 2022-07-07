@@ -39,7 +39,16 @@ export const getColorsFromDefaultPalette = (numberOfColors, currentColorList) =>
   if(numberOfColors === 1){
     /*if(currentSizeOfColorList < 2) colors.push(defaultPalette[Math.floor(Math.random() * defaultPalette.length)]);
     else colors.push(defaultPalette[currentSizeOfColorList+1]);*/
-    colors.push(defaultPalette[Math.floor(Math.random() * defaultPalette.length)])
+    console.log("type",typeof(currentColorList))
+    let possibleColor = defaultPalette[Math.floor(Math.random() * defaultPalette.length)]
+    if(Object.values(currentColorList).includes(possibleColor)){
+      console.log("entry is in both")
+      while(Object.values(currentColorList).includes(possibleColor)){
+        possibleColor = defaultPalette[Math.floor(Math.random() * defaultPalette.length)]
+
+      }
+    }
+    colors.push(possibleColor)
   } 
   if(numberOfColors > 1 && numberOfColors <= defaultPalette.length){
     while (colors.length < numberOfColors) colors.push(defaultPalette[colors.length])

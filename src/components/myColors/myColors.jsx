@@ -14,7 +14,7 @@ const MyColors = ({ colorList, setColorList }) => {
 
   const addColorValue = () => {
     console.log("sender inn lista nå", colorList)
-    if(colorList.length < 7)
+    if(colorList.length < 8)
     setColorList((colorList) => [...colorList, getColorsFromDefaultPalette(1, colorList)[0]])
   }
 
