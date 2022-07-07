@@ -29,8 +29,8 @@ const ContrastSummary = ({ contrastMatrix }) => {
   return (
     <div className="contrastTable">
       <h1>Kontrastoppsummering </h1>
-      <h3>Super kombinasjon</h3>
-      <ul>
+      <h3 className="contrastSummaryHeading">Super kombinasjon</h3>
+      <ul className="contrastSummaryList">
         {Object.values(AAAContrasts).map((item, index) => (
           <li key={"AA" + index}>
             <div
@@ -41,13 +41,13 @@ const ContrastSummary = ({ contrastMatrix }) => {
               className="colorBox"
               style={{ backgroundColor: item.farge2 }}
             />
-            {item.kontrastverdi}
+            {/*item.kontrastverdi*/}
           </li>
         ))}
       </ul>
 
-      <h3>Ok kombinasjon</h3>
-      <ul>
+      <h3 className="contrastSummaryHeading">Ok kombinasjon</h3>
+      <ul className="contrastSummaryList">
         {Object.values(AAContrasts).map((item, index) => (
           <li key={"AAA" + index}>
             <div
@@ -58,13 +58,13 @@ const ContrastSummary = ({ contrastMatrix }) => {
               className="colorBox"
               style={{ backgroundColor: item.farge2 }}
             />
-            {item.kontrastverdi}
+            {/*item.kontrastverdi*/}
           </li>
         ))}
       </ul>
 
-      <h3>Dårlige kombinasjoner</h3>
-      <ul>
+      <h3 className="contrastSummaryHeading">Dårlige kombinasjoner</h3>
+      <ul className="contrastSummaryList">
         {Object.values(badContrasts).map((item, index) => (
           <li key={"bad" + index}>
             <div
@@ -75,7 +75,7 @@ const ContrastSummary = ({ contrastMatrix }) => {
               className="colorBox"
               style={{ backgroundColor: item.farge2 }}
             />
-            {item.kontrastverdi}
+            {/*item.kontrastverdi*/}
           </li>
         ))}
       </ul>
