@@ -7,13 +7,14 @@ const ContrastTable = ({ contrastMatrix }) => {
     AA: "#F2E9B8",
     AAA: "#B7F1B8",
   }); //endre her hvis andre farger er ønskelig!
+  const [colorsInTable, setColorsInTable] = useState(false); 
 
   //Sjekker om verdien er en hex og returnerer fargen hvis ja
-  const getColorIfHex = (possibleHex) => {
+  const isHex = (possibleHex) => {
     const RegExp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
     return possibleHex.length === 7 && RegExp.test(possibleHex)
-      ? possibleHex
-      : "";
+      ? true
+      : false;
   };
 
   //Sjekker om verdien er kontrast, og returnerer evt passende farge etter oppfylte krav
@@ -27,9 +28,32 @@ const ContrastTable = ({ contrastMatrix }) => {
       : "";
   };
 
+  const getRowColor = (rowIndex, colIndex, rowItem) => {
+    if(1 <= rowItem <= 21) return contrastMatrix[0][rowIndex]
+    else return "";
+  }
+
+  const getColumnColor = (rowIndex, colIndex, rowItem) => {
+    return contrastMatrix[colIndex][0];
+  }
+
+  const toggle = () => {
+    setColorsInTable(!colorsInTable);
+  }
+
   return (
     <div className="contrastTable">
-      <h1>Tabellvisning</h1>
+      <div className="tableHeader">
+        <h1>Tabellvisning</h1>
+        <div className="toggle">
+          <h3>Vis {colorsInTable ? "standardvisning" : "fargekombinasjoner"}</h3>
+          <label className="switch">
+            <input type="checkbox" onChange={toggle}/>
+            <span className="slider round"></span>
+          </label>
+        </div>
+      </div>
+      
       <table>
         <tbody>
           {contrastMatrix.map((row, rowIndex) => (
@@ -37,13 +61,13 @@ const ContrastTable = ({ contrastMatrix }) => {
               {Object.values(row).map((rowItem, colIndex) => (
                 <td
                   key={"row" + rowIndex + "col" + colIndex}
-                  style={{ backgroundColor: getCellColorFromContrast(rowItem) }}
+                  style={{ backgroundColor: colorsInTable && colIndex != 0 && rowIndex != colIndex ? getRowColor(rowIndex, colIndex, rowItem) : getCellColorFromContrast(rowItem) }}
                 >
                   <div
-                    style={{ backgroundColor: getColorIfHex(rowItem) }}
+                    style={{ backgroundColor: isHex ? rowItem : "" }}
                     className="colorBox"
                   />
-                  <div>{rowItem}</div>
+                  <div  style={{ color: colorsInTable && rowIndex != 0 ?  getColumnColor(rowIndex, colIndex, rowItem) : "#000000" }}>{rowItem}</div>
                 </td>
               ))}
             </tr>
