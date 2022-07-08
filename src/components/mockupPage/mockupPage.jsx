@@ -10,10 +10,15 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
   const [allColorCombos, setAllColorCombos] = useState(
     getContrastList(contrastMatrix, 1.0, 21)
   );
+  const [degreesPerColor, setDegreesPerColor]= useState(360/colorList.length);
 
   useEffect(() => {
     setAllColorCombos(getContrastList(contrastMatrix, 1.0, 21.0));
   }, [contrastMatrix]);
+
+  useEffect(() => {
+    setDegreesPerColor(360/colorList.length)
+  }, [colorList]);
 
   const getColor1FromCombo = (comboNumber) => {
     return allColorCombos.length > 1 ? allColorCombos[comboNumber].farge1 : "#ffffff";
@@ -23,10 +28,24 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
     return allColorCombos.length > 1 ? allColorCombos[comboNumber].farge2 : "#000000";
   };
 
-  useEffect(() => {
-    console.log("nav active", navActive)
-    console.log("color lists", colorList)
-  },[navActive])
+  /*useEffect(() => {
+      console.log("nav active", navActive)
+      console.log("color lists", colorList)
+    },[navActive]) */ 
+
+/*TODO FIKS DENNE! */
+const getcolors = () => {
+  let string = "conic-gradient("
+  for(let color in colorList){
+    console.log(color)
+    string = string + colorList[color] + " 0 " + degreesPerColor + "deg ";
+  } 
+  string = string + ")"
+  console.log("returning colors", string)
+  console.log("sammenlikn med conic-gradient(pink 70deg, lightblue 0 235deg, orange 0)")
+  return "conic-gradient(pink 70deg, lightblue 0 235deg, orange 0)"
+  //return string
+}
 
   return (
     <div className="mockupPage" style={{
@@ -50,6 +69,7 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
           <h1
             style={{
               color: colorList[0],
+              fontSize: "14px"
             }}
           >
             En typisk coorporate webside
@@ -83,6 +103,7 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
           >
             <h1 style={{
               color: colorList[0],
+              fontSize: "14px"
             }}>test form</h1>
             <div>
               <input
@@ -92,7 +113,7 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
                 value="Bike"
               />
               <label for="vehicle1" style={{
-              color: colorList[0],
+              color: colorList[0],   fontSize: "12px"
             }}> Jeg har en katt</label>
             </div>
             <div>
@@ -104,12 +125,14 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
                 value="Bike"
               />
               <label for="vehicle1" style={{
-              color: colorList[0],
+              color: colorList[0], fontSize: "12px"
             }}> Jeg er fornøyd</label>
             </div>
           </form>
         </div>
-        <div className="rowItem-50"></div>
+        <div className="rowItem-50">
+          <div class="piechart" style={{backgroundImage: getcolors()}}></div>
+        </div>
       </div>
       <Footer
         backgroundColor={getColor1FromCombo(0)}
