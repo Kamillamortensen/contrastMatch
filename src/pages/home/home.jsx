@@ -74,7 +74,7 @@ function Home() {
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
         </div>
         <div className="contentGroup">
-          <MockupPage contrastMatrix={contrastMatrix}></MockupPage>
+          <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
         </div>
       </div>
       <Footer
