@@ -25,6 +25,7 @@
     margin: 0.1rem;
     flex-wrap: wrap;
     min-height: 40px;
+    align-items: center;
 }
 
 .contrastSummaryListItem{
