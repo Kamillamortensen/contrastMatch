@@ -52,7 +52,7 @@ const ContrastTable = ({ contrastMatrix }) => {
             <input type="checkbox" onChange={toggle}/>
             <span className="slider round"></span>
           </label>
-          <h3 className="h3-small">Bytt visning: {colorsInTable ? "standard" : "fargevisning"}</h3>
+          <h3 className="h3-small">Bytt visning: {colorsInTable ? "trafikklys" : "se fargevalg"}</h3>
         </div>
       </div>
       
