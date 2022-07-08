@@ -3,9 +3,10 @@ import React, { useState } from "react";
 
 const ContrastTable = ({ contrastMatrix }) => {
   const [contrastColors] = useState({
-    none: "#F2B8B8",
-    AA: "#F2E9B8",
-    AAA: "#B7F1B8",
+    none: "#ee8181",
+    AANontext: "#f7b87d",
+    AA: "#ecdb79",
+    AAA: "#cff7cf",
   }); //endre her hvis andre farger er ønskelig!
   const [colorsInTable, setColorsInTable] = useState(false); 
 
@@ -20,9 +21,11 @@ const ContrastTable = ({ contrastMatrix }) => {
   //Sjekker om verdien er kontrast, og returnerer evt passende farge etter oppfylte krav
   const getCellColorFromContrast = (possibleContrast) => {
     return possibleContrast >= 1 && possibleContrast <= 21 //kontraster er et tall mellom 1-21
-      ? possibleContrast < 4.5
+      ? possibleContrast < 3.0
         ? contrastColors.none
-        : 4.5 <= possibleContrast && possibleContrast < 7.0
+        : 3.0 <= possibleContrast && possibleContrast < 4.5 
+        ? contrastColors.AANontext :
+        4.5 <= possibleContrast && possibleContrast < 7.0
         ? contrastColors.AA
         : contrastColors.AAA
       : "";
@@ -43,14 +46,13 @@ const ContrastTable = ({ contrastMatrix }) => {
 
   return (
     <div className="contrastTable">
-      <div className="tableHeader">
-        <h1>Tabellvisning</h1>
+      <div className="tableHeader" aria-describedby="visning av fargekombinasjonene med deres kontrastverdier i en matrise">
         <div className="toggle">
-          <h3>Vis {colorsInTable ? "standardvisning" : "fargekombinasjoner"}</h3>
           <label className="switch">
             <input type="checkbox" onChange={toggle}/>
             <span className="slider round"></span>
           </label>
+          <h3 className="h3-small">Bytt visning: {colorsInTable ? "standard" : "fargevisning"}</h3>
         </div>
       </div>
       
@@ -67,7 +69,7 @@ const ContrastTable = ({ contrastMatrix }) => {
                     style={{ backgroundColor: isHex ? rowItem : "" }}
                     className="colorBox"
                   />
-                  <div  style={{ color: colorsInTable && rowIndex != 0 ?  getColumnColor(rowIndex, colIndex, rowItem) : "#000000" }}>{rowItem}</div>
+                  <p className="tableText"  style={{ color: colorsInTable && rowIndex != 0 ?  getColumnColor(rowIndex, colIndex, rowItem) : "#000000" }}>{rowItem}</p> 
                 </td>
               ))}
             </tr>
