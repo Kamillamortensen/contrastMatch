@@ -6,18 +6,19 @@ import { getContrastList } from "../../contrast-calculations";
 import { UndrawBrainstorming } from "react-undraw-illustrations";
 
 const MockupPage = ({ contrastMatrix, colorList }) => {
-  const [navActive, setNavActive] = useState(false);
   const [allColorCombos, setAllColorCombos] = useState(
     getContrastList(contrastMatrix, 1.0, 21)
   );
   const [degreesPerColor, setDegreesPerColor]= useState(360/colorList.length);
+  const [pieChartValues, setPieChartValues] = useState();
 
   useEffect(() => {
     setAllColorCombos(getContrastList(contrastMatrix, 1.0, 21.0));
   }, [contrastMatrix]);
 
   useEffect(() => {
-    setDegreesPerColor(360/colorList.length)
+    setDegreesPerColor(360/colorList.length);
+    setPieChartValues(getPieChartColors);
   }, [colorList]);
 
   const getColor1FromCombo = (comboNumber) => {
@@ -28,34 +29,22 @@ const MockupPage = ({ contrastMatrix, colorList }) => {
     return allColorCombos.length > 1 ? allColorCombos[comboNumber].farge2 : "#000000";
   };
 
-  /*useEffect(() => {
-      console.log("nav active", navActive)
-      console.log("color lists", colorList)
-    },[navActive]) */ 
-
-/*TODO FIKS DENNE! */
-const getcolors = () => {
+/*Returnerer en string som brukes til å sette fargene i pie chart
+* Formen er "conic-gradinet( #hex xdeg ydeg, #hex2 ydeg zdeg) 
+* hvor gradene er start- og slutt-sted for hver enkelt farge
+*/
+const getPieChartColors = () => {
   let string = "conic-gradient("
-  for(let color in colorList){
-    console.log(color)
-    string = string + colorList[color] + " 0 " + degreesPerColor + "deg ";
-  } 
+  colorList.map((value, i) => (i+1 === colorList.length ? string = string + colorList[i] + " " + degreesPerColor*i + "deg " + (degreesPerColor*i+degreesPerColor) + "deg" : string = string + colorList[i] + " " + degreesPerColor*i + "deg " + (degreesPerColor*i+degreesPerColor) + "deg, "))
   string = string + ")"
-  console.log("returning colors", string)
-  console.log("sammenlikn med conic-gradient(pink 70deg, lightblue 0 235deg, orange 0)")
-  return "conic-gradient(pink 70deg, lightblue 0 235deg, orange 0)"
-  //return string
+  return string
 }
 
   return (
     <div className="mockupPage" style={{
       backgroundColor: colorList[3],
     }}>
-      <div 
-      onMouseEnter={() => setNavActive(true)}
-      onMouseLeave={() => setNavActive(false)}
-      className={navActive ? "active" : ""}
-      >
+      <div>
         <NavBar
           className="mockupNav" 
           title="mockup website"
@@ -131,7 +120,7 @@ const getcolors = () => {
           </form>
         </div>
         <div className="rowItem-50">
-          <div class="piechart" style={{backgroundImage: getcolors()}}></div>
+          <div class="piechart" style={{backgroundImage: pieChartValues}}></div>
         </div>
       </div>
       <Footer
