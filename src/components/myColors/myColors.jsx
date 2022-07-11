@@ -29,7 +29,7 @@ const MyColors = ({ colorList, setColorList }) => {
 
   return (
     <div className="myColors">
-      <div className="headingAndButton">
+      <div className="button">
         <button className="addColorButton"
           onClick={addColorValue}
         >

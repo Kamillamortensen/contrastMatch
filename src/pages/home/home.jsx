@@ -58,6 +58,33 @@ function Home() {
 
   return (
     <div className="App">
+      <div className="colorBar">
+        <MyColors
+          colorList={colorList}
+          setColorList={setColorList}
+        />
+      </div>
+      <div className="rightSideBar">
+        <NavBar
+          title={t('title')}
+          backgroundColor="#1c4259"
+          textColor="#ffffff"  
+        />
+          <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
+          <ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary>
+          <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
+          <Footer
+          backgroundColor={"#1c4259"}
+          textColor={"#ffffff"}
+          text={t('footer-text')}
+          />
+        
+      </div>
+    </div>
+  );
+
+  /*return (
+    <div className="App">
       <div>
         <NavBar
           title={t('title')}
@@ -85,7 +112,7 @@ function Home() {
         text={t('footer-text')}
       />
     </div>
-  );
+  ); */
 }
 
 export default Home;

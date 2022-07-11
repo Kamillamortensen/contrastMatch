@@ -1,15 +1,14 @@
 import "./navBar.css";
 import React from "react";
 
-const NavBar = ({ title, backgroundColor, textColor, topFixed }) => {
+const NavBar = ({ title, backgroundColor, textColor }) => {
   return (
     <div
       className="navBar"
       style={{
         backgroundColor: backgroundColor,
         color: textColor,
-        top: topFixed ? 0 : "none",
-        position: topFixed ? "fixed" : "static",
+        position: "static",
       }}
     >
       <div className="title">
