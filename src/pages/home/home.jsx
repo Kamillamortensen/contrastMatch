@@ -82,7 +82,7 @@ function Home() {
       <Footer
         backgroundColor={"#1c4259"}
         textColor={"#ffffff"}
-        text={"Kontakt: email@email.no"}
+        text={t('footer-text')}
       />
     </div>
   );
