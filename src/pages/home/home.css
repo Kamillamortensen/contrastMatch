@@ -2,7 +2,7 @@
   display: grid;
   overflow: hidden;
   grid-template-areas: "colorbar content";
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 185px auto;
   height: 100vh;
 }
 
