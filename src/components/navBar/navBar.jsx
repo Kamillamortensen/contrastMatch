@@ -1,5 +1,5 @@
 import "./navBar.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const NavBar = ({ title, backgroundColor, textColor, topFixed }) => {
   return (
