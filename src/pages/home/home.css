@@ -54,7 +54,14 @@
 
 .tableSection {
   padding: 1rem;
+}
 
+.mockupSection {
+  padding: 2rem;
+  background-color: var(--base-color-light-beige);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 button {

@@ -43,7 +43,7 @@ const getPieChartColors = () => {
 }
 
   return (
-    <div className="mockupPage" style={{ backgroundColor: colorList[3] }}>
+    <div className="mockupPage" style={{ backgroundColor: colorList[3]}}>
       <NavBar
         className="mockupNav" 
         title="mockup website"

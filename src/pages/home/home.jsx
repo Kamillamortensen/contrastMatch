@@ -114,7 +114,7 @@ function Home() {
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
         </div>
         {/*<div><ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary></div>*/}
-        <div>
+        <div className="mockupSection">
           <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
         </div>
         <Footer
