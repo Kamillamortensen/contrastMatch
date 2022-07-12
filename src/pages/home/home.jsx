@@ -87,26 +87,25 @@ function Home() {
           <div className="aboutSectionLeft">
             <div className="row">
               <InvertColorsRoundedIcon></InvertColorsRoundedIcon>
-              <h1 className="h1-aboutSection-title">{t('title')}</h1>
+              <h1 className="h1-aboutSection-title">{t('about-title')}</h1>
             </div>
             <div>
-            <p className="p-small-about">Kontrasten mellom to farger kan beskrives som en verdi mellom 1 og 21. Bruk WCAGs "kategorier" for å designe produkter med gode kontraster! </p>
-            <p className="p-small-about">Fra 1.februar 2023 må alle offentlige
-              nettsider og webapplikasjoner følge WCAG 2.1. </p>
+            <p className="p-small-about">{t('about-description')} </p>
+            <p className="p-small-about">{t('about-wcag')}</p>
             <a href="https://www.uutilsynet.no/fremtidig-regelverk/wcag-21-standarden/140"  target="_blank" rel="noreferrer noopener">
-              <button className="primaryButton">Les om WCAG 2.1</button>
+              <button className="primaryButton">{t('about-button-linking-to-wcag')}</button>
             </a> 
             </div>
           </div>
           <div className="aboutSectionRight">
             <div className="aboutSectionTextBoxContainer">
               <TextBox title={t('contrast-summary-aaa')} titleIcon={<TextFieldsIcon/>} 
-              backgroundColor={contrastColors.AAA} mainText="Dette er kontraster med verdi høyere enn 7."></TextBox>
+              backgroundColor={contrastColors.AAA} mainText={t('about-wcag-aaa')}></TextBox>
               <TextBox title={t('contrast-summary-aa')} titleIcon={<TextFieldsIcon/>} 
-              backgroundColor={contrastColors.AA} mainText="Dette er kontraster med verdi mellom 4.5 og 7"></TextBox>
+              backgroundColor={contrastColors.AA} mainText={t('about-wcag-aa')}></TextBox>
               <TextBox title={t('contrast-summary-nontext-aa')} titleIcon={<AutoAwesomeMosaicIcon/>} 
-              backgroundColor={contrastColors.AANontext} mainText="Dette er kontraster med verdi mellom 3 og 4.5, og burde ikke brukes som teskt på bakgrunnsfarge,
-              men kan godt brukes til komponenter som knapp på bakgrunn, illustrasjoner eller grafer."></TextBox>
+              backgroundColor={contrastColors.AANontext} mainText="Dette er kontraster med verdi mellom 3 og 4.5. Burde ikke brukes som teskt og bakgrunn,
+              men kan brukes i ulike komponenter."></TextBox>
               <TextBox title={t('contrast-summary-low')} titleIcon={<VisibilityOffIcon/>} 
               backgroundColor={contrastColors.none} mainText="Verdier under 3. Anbefales ikke til bruk på tekst eller andre sentrale komponenter."></TextBox>
             </div>
