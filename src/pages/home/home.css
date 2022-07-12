@@ -22,6 +22,35 @@
   width: 100%;
 }
 
+.aboutSection {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--base-color-light-beige);
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.aboutSectionLeft {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px;
+}
+
+.aboutSectionRight {
+  flex-direction: column;
+  width: 60%;
+  padding: 10px;
+}
+
+.aboutSectionTextBoxContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+}
+
 button {
   background-color: var(--base-color-dark-grey); /* Fargeøsnke? */
   border: none;
@@ -41,19 +70,34 @@ button:hover {
   background-color: var(--base-color-pink);
 }
 
-h1 {
-  font-size: 18px;
+.primaryButton{
+  background-color: var(--base-color-pink);
+  color: var(--base-color-black)
 }
 
-h2 {
-  font-size: 16px;
+.primaryButton:hover{
+  background-color: var(--base-color-dark-pink);
+  color: white;
 }
 
-h3 {
-  font-size: 16px;
+
+.h1-aboutSection-title {
+  font-size: 26px;
 }
 
 .h3-small {
   font-size: 16px;
   font-weight: normal;
+}
+
+.p-small-about {
+  font-size: 14px;
+  max-width: 50ch;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 }
