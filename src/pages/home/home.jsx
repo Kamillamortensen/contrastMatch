@@ -12,8 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 function Home() {
   const { t } = useTranslation();
-  //const [colorList, setColorList] = useState(["#f5f5f5", "#404040", "#d4ece9", "#1c6e65",  "#ffeba3"]); //HARDKODA, FJERN SENERE
-  const [colorList, setColorList] = useState(getColorsFromDefaultPalette(5, 0)); //HARDKODA, FJERN SENERE
+  const [colorList, setColorList] = useState(getColorsFromDefaultPalette(5, 0)); 
   const [tableList, setTableList] = useState([""]);
   const [contrastMatrix, setContrastMatrix] = useState([""].concat(colorList));
 
@@ -26,6 +25,7 @@ function Home() {
     setupContrastMatrix();
   }, [tableList]);
 
+  //Lager matrise av fargelisten
   const setupContrastMatrix = () => {
     const table = [];
     for (let row in tableList) {
@@ -35,7 +35,6 @@ function Home() {
       }
       table.push(rowObject);
     }
-    //console.log("matrix laget", table)
     setContrastMatrix(table);
   };
 
@@ -52,8 +51,8 @@ function Home() {
   const getContrast = (rowIndex, columnIndex) => {
     const color1 = tableList[columnIndex];
     const color2 = tableList[rowIndex];
-    const contrast = checkColors(color1, color2);
-    return contrast.contrast; //contrast har mange verdier. Console.log for å se alle muligheter:)
+    const colorComparison = checkColors(color1, color2);
+    return colorComparison.contrast; 
   };
 
   return (
@@ -67,52 +66,21 @@ function Home() {
       <div className="rightSideBar">
         <NavBar
           title={t('title')}
-          backgroundColor="#1c4259"
-          textColor="#ffffff"  
+          backgroundColor="#f8f5f2"
+          textColor="#1f1235"  
         />
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
           <ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary>
           <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
           <Footer
-          backgroundColor={"#1c4259"}
-          textColor={"#ffffff"}
+          backgroundColor="#f8f5f2"
+          textColor="#1f1235"  
           text={t('footer-text')}
           />
         
       </div>
     </div>
   );
-
-  /*return (
-    <div className="App">
-      <div>
-        <NavBar
-          title={t('title')}
-          backgroundColor="#1c4259"
-          textColor="#ffffff"
-          topFixed={true}
-        ></NavBar>
-        <MyColors
-            colorList={colorList}
-            setColorList={setColorList}
-          ></MyColors>
-      </div>
-      <div className="content">
-        <div className="contentLeft">
-          <ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary>
-        </div>
-        <div className="contentRight">
-            <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
-            <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
-        </div>
-      </div>
-      <Footer
-        backgroundColor={"#1c4259"}
-        textColor={"#ffffff"}
-        text={t('footer-text')}
-      />
-    </div>
-  ); */
 }
 
 export default Home;

@@ -1,12 +1,15 @@
+@import "../../variables.css";
+
 .myColors {
   min-height: 100vh;
   height: fit-content;
-  background-color: #f1f1f1;
+  background-color: var(--base-color-light-grey);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-right: 2px groove var(--base-color-dark-grey);
 }
 
 .button {

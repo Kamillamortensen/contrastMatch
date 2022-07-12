@@ -1,3 +1,5 @@
+@import "../../variables.css";
+
 .App {
   display: grid;
   overflow: hidden;
@@ -8,7 +10,7 @@
 
 .colorBar {
   grid-area: colorbar;
-  /*overflow: scroll;*/
+  /*overflow: scroll; blir aktuelt hvis vi vil ha scroll i fargene*/
 }
 
 .rightSideBar {
@@ -21,10 +23,10 @@
 }
 
 button {
-  background-color: #3e3e3e; /* Fargeøsnke? */
+  background-color: var(--base-color-dark-grey); /* Fargeøsnke? */
   border: none;
   border-radius: 4px;
-  color: #fff;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -36,7 +38,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: black;
+  background-color: var(--base-color-pink);
 }
 
 h1 {
