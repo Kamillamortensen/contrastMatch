@@ -57,29 +57,29 @@ const ContrastTable = ({ contrastMatrix }) => {
           <input type="radio"  className="radio-button"  checked={colorsInTable ? true : false} name="table-view"/>
           {t('view-chosen-colors')}
         </label>        
-    </div>
-
-      
-      <table>
-        <tbody>
-          {contrastMatrix.map((row, rowIndex) => (
-            <tr key={"row" + rowIndex}>
-              {Object.values(row).map((rowItem, colIndex) => (
-                <td
-                  key={"row" + rowIndex + "col" + colIndex}
-                  style={{ backgroundColor: colorsInTable && colIndex != 0 && rowIndex != colIndex ? getRowColor(rowIndex, colIndex, rowItem) : getCellColorFromContrast(rowItem) }}
-                >
-                  <div
-                    style={{ backgroundColor: isHex ? rowItem : "" }}
-                    className="colorBox"
-                  />
-                  <p className="tableText"  style={{ color: colorsInTable && rowIndex != 0 ?  getColumnColor(rowIndex, colIndex, rowItem) : "#000000" }}>{rowItem}</p> 
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      </div>
+      <div className="tableBody">
+        <table>
+          <tbody>
+            {contrastMatrix.map((row, rowIndex) => (
+              <tr key={"row" + rowIndex}>
+                {Object.values(row).map((rowItem, colIndex) => (
+                  <td
+                    key={"row" + rowIndex + "col" + colIndex}
+                    style={{ backgroundColor: colorsInTable && colIndex != 0 && rowIndex != colIndex ? getRowColor(rowIndex, colIndex, rowItem) : getCellColorFromContrast(rowItem) }}
+                  >
+                    <div
+                      style={{ backgroundColor: isHex ? rowItem : "" }}
+                      className="colorBox"
+                    />
+                    <p className="tableText"  style={{ color: colorsInTable && rowIndex != 0 ?  getColumnColor(rowIndex, colIndex, rowItem) : "#000000" }}>{rowItem}</p> 
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

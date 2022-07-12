@@ -1,7 +1,7 @@
 @import "../../variables.css";
 
 .contrastTable {
-    background-color: var(--base-color-light-grey);
+    /*background-color: var(--base-color-light-grey);*/
     padding: 1rem;
     border-radius: 4px;
     width: fit-content;
@@ -19,20 +19,19 @@
   margin-left: 2px; /*fordi ytterse sirkel i radio button er 2px */
 }
 
-.toggle{
-  display: flex;
-  flex-direction: row;
-  width: fit-content;
-  align-items: center;
-  gap: 1rem;
+.tableBody{
+  background-color: var(--base-color-light-grey);
+  border: 15px solid var(--base-color-light-grey);
+  border-radius: 4px;
 }
 
-table, th, td {
+ table, td {
+    /*border: 4px solid white;*/
     border: 4px solid white;
     border-collapse: collapse;
   }
 
-  th, td {
+  td {
     padding: 6px;
     background-color: var(--base-color-light-grey);
     min-width: 85px; 
