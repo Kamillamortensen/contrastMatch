@@ -25,6 +25,7 @@
 .aboutSection {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   background-color: var(--base-color-light-beige);
   padding: 30px;
   justify-content: space-between;
@@ -34,6 +35,7 @@
   display: flex;
   flex-direction: column;
   width: 30%;
+  min-width: 235px;
   padding: 10px;
 }
 

@@ -5,7 +5,7 @@
     "about-button-linking-to-wcag" : "Les om WCAG 2.1",
     "about-wcag-aaa" : "Dette er kontraster med verdi høyere enn 7. Optimale kontraster for tekst og bakgrunnsfarge!",
     "about-wcag-aa" : "Dette er kontraster med verdi mellom 4.5 og 7. Gode kontraster for tekst og bakgrunnsfarge.",
-    "about-wcag-nontext-aa" : "Dette er kontraster med verdi mellom 3 og 4.5. Burde ikke brukes som teskt og bakgrunn, men kan brukes i ulike komponenter.",
+    "about-wcag-nontext-aa" : "Dette er kontraster med verdi mellom 3 og 4.5. Burde ikke brukes som tekst og bakgrunn, men kan brukes i ulike komponenter.",
     "about-wcag-low" : "Verdier under 3. Anbefales ikke til bruk på tekst eller andre sentrale komponenter.",
     "footer-text": "kontakt: email@email.no",
     "input-delete" : "fjern farge",
@@ -19,6 +19,7 @@
     "table-switch" : "Bytt visning: ",
     "traffic-lights" : "trafikklys",
     "view-chosen-colors" : "se fargevalg",
+    "view-contrast-level-by-color" : "se kontrastnivå",
 
     "mockup-title" : "Slik ser fargene ut",
     "mockup-text-small" : "Se hvordan fargevalgene dine påvirker lesbarhet og design! ",

@@ -49,14 +49,16 @@ const ContrastTable = ({ contrastMatrix }) => {
   return (
     <div className="contrastTable">
       <div className="tableHeader" aria-describedby="visning av fargekombinasjonene med deres kontrastverdier i en matrise">
-        <div className="toggle">
-          <label className="switch">
-            <input type="checkbox" onChange={toggle}/>
-            <span className="slider round"></span>
-          </label>
-          <h3 className="h3-small">{t('table-switch')} {colorsInTable ? t('traffic-lights') : t('view-chosen-colors')}</h3>
-        </div>
-      </div>
+        <label for="html" onClick={()=>setColorsInTable(false)}>
+          <input type="radio" className="radio-button" checked={colorsInTable ? false : true} name="table-view"/>
+          {t('view-contrast-level-by-color')}
+        </label>
+        <label for={t('view-chosen-colors')}  onClick={()=>setColorsInTable(true)}>
+          <input type="radio"  className="radio-button"  checked={colorsInTable ? true : false} name="table-view"/>
+          {t('view-chosen-colors')}
+        </label>        
+    </div>
+
       
       <table>
         <tbody>
