@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border: 2px solid var(--base-color-mid-grey);
+  border: 4px solid var(--base-color-mid-grey);
+  border-radius: 4px;
 }
 
 .mockupRow {
