@@ -1,9 +1,7 @@
 import "./home.css";
 import React, { useEffect, useState } from "react";
-import NavBar from "../../components/navBar/navBar";
 import ContrastTable from "../../components/contrastTable/contrastTable";
-import ContrastSummary from "../../components/contrastSummary/contrastSummary";
-import MockupElement from "../../components/mockupElement/mockupElement";
+import MockupTextBox from "../../components/mockupTextBox/mockupTextBox";
 import MockupPage from "../../components/mockupPage/mockupPage";
 import MyColors from "../../components/myColors/myColors";
 import Footer from "../../components/footer/footer";
@@ -30,9 +28,9 @@ function Home() {
     AAA: "#cff7cf",
   }); //endre her hvis andre farger er ønskelig!
 
-  //denne kjører hver gang colorList oppdateres
   useEffect(() => {
-    setTableList([""].concat(colorList)); //samme som colorList men med ett tomt felt først
+    //samme som colorList men med ett tomt felt først
+    setTableList([""].concat(colorList)); 
   }, [colorList]);
 
   useEffect(() => {
@@ -53,7 +51,8 @@ function Home() {
   };
 
   const getCellValue = (rowIndex, columnIndex) => {
-    if (rowIndex === columnIndex) return ""; //returnerer tom fordi det er samme fargene
+    //returnerer tom fordi det er samme fargene
+    if (rowIndex === columnIndex) return ""; 
     if (rowIndex == 0) return tableList[columnIndex];
     else if (columnIndex == 0) {
       return tableList[rowIndex];
@@ -78,13 +77,6 @@ function Home() {
         />
       </div>
       <div className="rightSideBar">
-        {/** 
-        <NavBar
-          title={t('title')}
-          titleIcon={<InvertColorsRoundedIcon></InvertColorsRoundedIcon>}
-          backgroundColor="#f8f5f2"
-          textColor="#1f1235"  
-  /> */}
         <div className="aboutSection">
           <div className="aboutSectionLeft">
             <div className="row">
@@ -119,11 +111,13 @@ function Home() {
         {/*<div><ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary></div>*/}
         <div className="mockupSection">
           <div className="mockup-section-title">
-            <h2 className="big-title">Test fargene dine i mockups!</h2>
-            <p className="p-small-about">Dra farger fra palettet til venstre og slipp de ned på de ulike komponentene. </p>
+            <h2 className="big-title">Test fargene i praksis!</h2>
+            <p className="p-small-about">Bruk komponentene under om du vil se fargekombinasjonene dine i ulike sammenhenger. </p>
           </div>
           <div>
-            <MockupElement title={"Test fargene i en tekstboks!"}  mainText={'Dra en farge bort hit, og velg om den skal være i teksten eller bakgrunnen.'} titleIcon={<AutoAwesomeIcon/>} backgroundColor="#fcfcfc" color1={colorList[2]} color2={colorList[3]}></MockupElement>
+            <MockupTextBox colorList={colorList} title={"Test fargene i en tekstboks!"}  
+            mainText={'Du kan endre farger til venstre for å se andre mulige kombinasjonser fra palettet.'} 
+            titleIcon={<AutoAwesomeIcon/>} color1={colorList[3]} color2={colorList[2]}></MockupTextBox>
           </div>
         </div>
         <div>

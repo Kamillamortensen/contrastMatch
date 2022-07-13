@@ -126,6 +126,12 @@ button:hover {
   font-weight: normal;
 }
 
+.flex-end{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
 .p-small-about {
   font-size: 14px;
   max-width: 50ch;

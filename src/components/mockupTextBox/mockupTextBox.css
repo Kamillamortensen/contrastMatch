@@ -43,4 +43,9 @@
     pointer-events: none;
     user-select: none;
 }
+
+.colorBlock{
+    width: 20px;
+    height: 20px;
+}
   
