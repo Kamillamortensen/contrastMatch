@@ -62,8 +62,16 @@
   padding: 2rem;
   background-color: var(--base-color-light-beige);
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mockup-section-title{
+  display: flex;
   flex-direction: row;
-  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 button {
@@ -96,8 +104,21 @@ button:hover {
 }
 
 
-.h1-aboutSection-title {
+.big-title {
   font-size: 26px;
+}
+
+.h2-title {
+  font-size: 22px;
+  color: var(--base-color-black);
+}
+
+.see-contrast-heading{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 4rem;
+  margin:0;
+  color: var(--base-color-dark-pink);
 }
 
 .h3-small {

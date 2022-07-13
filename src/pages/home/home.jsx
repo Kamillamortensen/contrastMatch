@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../../components/navBar/navBar";
 import ContrastTable from "../../components/contrastTable/contrastTable";
 import ContrastSummary from "../../components/contrastSummary/contrastSummary";
+import MockupElement from "../../components/mockupElement/mockupElement";
 import MockupPage from "../../components/mockupPage/mockupPage";
 import MyColors from "../../components/myColors/myColors";
 import Footer from "../../components/footer/footer";
@@ -14,6 +15,7 @@ import InvertColorsRoundedIcon from '@mui/icons-material/InvertColorsRounded';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 function Home() {
   const { t } = useTranslation();
@@ -87,7 +89,7 @@ function Home() {
           <div className="aboutSectionLeft">
             <div className="row">
               <InvertColorsRoundedIcon></InvertColorsRoundedIcon>
-              <h1 className="h1-aboutSection-title">{t('about-title')}</h1>
+              <h1 className="big-title">{t('about-title')}</h1>
             </div>
             <div>
             <p className="p-small-about">{t('about-description')} </p>
@@ -111,10 +113,20 @@ function Home() {
           </div>
         </div>
         <div className="tableSection">
+          <h2 className="big-title see-contrast-heading">Se kontrastnivå for fargepalettet ditt</h2>
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
         </div>
         {/*<div><ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary></div>*/}
         <div className="mockupSection">
+          <div className="mockup-section-title">
+            <h2 className="big-title">Test fargene dine i mockups!</h2>
+            <p className="p-small-about">Dra farger fra palettet til venstre og slipp de ned på de ulike komponentene. </p>
+          </div>
+          <div>
+            <MockupElement title={"Test fargene i en tekstboks!"}  mainText={'Dra en farge bort hit, og velg om den skal være i teksten eller bakgrunnen.'} titleIcon={<AutoAwesomeIcon/>} backgroundColor="#fcfcfc" color1={colorList[2]} color2={colorList[3]}></MockupElement>
+          </div>
+        </div>
+        <div>
           <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
         </div>
         <Footer
