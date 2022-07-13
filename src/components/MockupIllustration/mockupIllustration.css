@@ -33,14 +33,13 @@
 
   .mockup-color-bar-color-bottom {
     border-bottom-left-radius: 4px;
-}
+  }
 
-.mockup-element-content {
-    padding: 1rem;
+  .mockup-illustration-container {
+    padding: 0;
+    width: fit-content;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    pointer-events: none;
-    user-select: none;
-}
-  
+    align-items: center;
+    padding: 1.5rem;
+  }

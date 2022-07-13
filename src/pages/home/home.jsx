@@ -2,6 +2,7 @@ import "./home.css";
 import React, { useEffect, useState } from "react";
 import ContrastTable from "../../components/contrastTable/contrastTable";
 import MockupTextBox from "../../components/mockupTextBox/mockupTextBox";
+import MockupIllustration from "../../components/MockupIllustration/mockupIllustration"
 import MockupPage from "../../components/mockupPage/mockupPage";
 import MyColors from "../../components/myColors/myColors";
 import Footer from "../../components/footer/footer";
@@ -14,6 +15,7 @@ import TextFieldsIcon from '@mui/icons-material/TextFields';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { UndrawBrowser } from "react-undraw-illustrations";
 
 function Home() {
   const { t } = useTranslation();
@@ -105,19 +107,20 @@ function Home() {
           </div>
         </div>
         <div className="tableSection">
-          <h2 className="big-title see-contrast-heading">Se kontrastnivå for fargepalettet ditt</h2>
+          <h2 className="big-title dark-pink see-contrast-heading">Se kontrastnivå for fargepalettet ditt</h2>
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
         </div>
         {/*<div><ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary></div>*/}
         <div className="mockupSection">
           <div className="mockup-section-title">
-            <h2 className="big-title">Test fargene i praksis!</h2>
-            <p className="p-small-about">Bruk komponentene under om du vil se fargekombinasjonene dine i ulike sammenhenger. </p>
+            <h2 className="big-title dark-pink">Test fargene i praksis!</h2>
+            <p className="p-small-about dark-pink">Bruk komponentene under om du vil se fargekombinasjonene dine i ulike sammenhenger. </p>
           </div>
-          <div>
+          <div className="aboutSectionTextBoxContainer">
             <MockupTextBox colorList={colorList} title={"Test fargene i en tekstboks!"}  
             mainText={'Du kan endre farger til venstre for å se andre mulige kombinasjonser fra palettet.'} 
             titleIcon={<AutoAwesomeIcon/>} color1={colorList[3]} color2={colorList[2]}></MockupTextBox>
+            <MockupIllustration colorList={colorList} color1={colorList[3]} color2={colorList[2]}></MockupIllustration>
           </div>
         </div>
         <div>

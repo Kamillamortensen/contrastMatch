@@ -108,6 +108,10 @@ button:hover {
   font-size: 26px;
 }
 
+.dark-pink {
+  color: var(--base-color-dark-pink);
+}
+
 .h2-title {
   font-size: 22px;
   color: var(--base-color-black);
@@ -118,7 +122,6 @@ button:hover {
   justify-content: flex-end;
   padding-right: 4rem;
   margin:0;
-  color: var(--base-color-dark-pink);
 }
 
 .h3-small {
