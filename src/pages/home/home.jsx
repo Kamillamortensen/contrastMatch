@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import ContrastTable from "../../components/contrastTable/contrastTable";
 import MockupTextBox from "../../components/mockupTextBox/mockupTextBox";
 import MockupIllustration from "../../components/MockupIllustration/mockupIllustration"
-import MockupPage from "../../components/mockupPage/mockupPage";
 import MyColors from "../../components/myColors/myColors";
 import MockupGraph from "../../components/mockupGraph/mockupGraph";
 import Footer from "../../components/footer/footer";
@@ -18,19 +17,14 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import HandymanIcon from '@mui/icons-material/Handyman';
+import { contrastColors } from "../../varialbes";
+
 
 function Home() {
   const { t } = useTranslation();
   const [colorList, setColorList] = useState(getColorsFromDefaultPalette(5, 0)); 
   const [tableList, setTableList] = useState([""]);
   const [contrastMatrix, setContrastMatrix] = useState([""].concat(colorList));
-  
-  const [contrastColors] = useState({
-    none: "#ee8181",
-    AANontext: "#f7b87d",
-    AA: "#ecdb79",
-    AAA: "#cff7cf",
-  }); //endre her hvis andre farger er ønskelig!
 
   useEffect(() => {
     //samme som colorList men med ett tomt felt først
@@ -111,7 +105,7 @@ function Home() {
         <div className="tableSection">
           <div className="see-contrast-heading">
             <ColorLensIcon></ColorLensIcon>
-            <h2 className="big-title">Se kontrastnivå for fargepalettet ditt</h2>
+            <h2 className="big-title">{t('table-section-title')}</h2>
           </div>
           <ContrastTable contrastMatrix={contrastMatrix}></ContrastTable>
         </div>
@@ -119,11 +113,11 @@ function Home() {
         <div className="mockupSection">
           <div className="mockup-section-title">
             <HandymanIcon></HandymanIcon>
-            <h2 className="big-title">Test fargene i praksis!</h2>
+            <h2 className="big-title">{t('mockup-section-title')}</h2>
           </div>
           <div className="aboutSectionTextBoxContainer">
-            <MockupTextBox colorList={colorList} title={"Test fargene i en tekstboks!"}  
-            mainText={'Du kan endre farger til venstre for å se andre mulige kombinasjonser fra palettet.'} 
+            <MockupTextBox colorList={colorList} title={t('mockup-textbox-header')}  
+            mainText={t('mockup-textbox-maintext')} 
             titleIcon={<AutoAwesomeIcon/>} color1={colorList[3]} color2={colorList[2]}></MockupTextBox>
             <MockupIllustration colorList={colorList} color1={colorList[3]} color2={colorList[2]}></MockupIllustration>
             <MockupGraph colorList={colorList}></MockupGraph>

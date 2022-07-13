@@ -5,6 +5,7 @@ import TextFieldsIcon from '@mui/icons-material/TextFields';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useTranslation } from 'react-i18next';
+import { contrastColors } from "../../varialbes";
 
 const ContrastSummary = ({ contrastMatrix }) => {
   const { t } = useTranslation();
@@ -20,16 +21,6 @@ const ContrastSummary = ({ contrastMatrix }) => {
   const [badContrasts, setBadContrasts] = useState(
     getContrastList(contrastMatrix, 1, 1)
   );
-
-
-
-  const [contrastColors] = useState({
-    none: "#ee8181",
-    AANontext: "#f7b87d",
-    AA: "#ecdb79",
-    AAA: "#cff7cf",
-  }); //endre her hvis andre farger er ønskelig!
-
 
   useEffect(() => {
     setBadContrasts("");

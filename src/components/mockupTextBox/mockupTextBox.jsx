@@ -27,11 +27,6 @@ const MockupTextBox = ({ title, titleIcon, textColor, mainText, color1, color2, 
                 <p className="p-text-box" style={{ color: colorForText }}>{mainText}</p>
             </div>
         </div>
-        <div className="colorList" style={{ display: "none" }}> //logikk her!!!!!!
-            {Object.values(colorList).map((color, index) => (
-                <div className="colorBlock" style={{ backgroundColor: color }}></div>
-            ))}
-        </div>
     </div>
   );
 };

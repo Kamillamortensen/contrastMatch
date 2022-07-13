@@ -23,11 +23,6 @@ const MockupIllustration = ({ color1, color2, colorList }) => {
                 height="9rem"
                 />
             </div>
-            <div className="colorList" style={{ display: "none" }}> //logikk her!!!!!!
-                {Object.values(colorList).map((color, index) => (
-                    <div className="colorBlock" style={{ backgroundColor: color }}></div>
-                ))}
-            </div>
         </div>
     </div>
   );

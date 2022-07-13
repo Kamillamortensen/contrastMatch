@@ -1,15 +1,10 @@
 import "./contrastTable.css";
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
+import { contrastColors } from "../../varialbes";
 
 const ContrastTable = ({ contrastMatrix }) => {
   const { t } = useTranslation();
-  const [contrastColors] = useState({
-    none: "#ee8181",
-    AANontext: "#f7b87d",
-    AA: "#ecdb79",
-    AAA: "#cff7cf",
-  }); //endre her hvis andre farger er ønskelig!
   const [colorsInTable, setColorsInTable] = useState(false); 
 
   //Sjekker om verdien er en hex og returnerer fargen hvis ja

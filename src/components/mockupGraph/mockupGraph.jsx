@@ -32,6 +32,7 @@ const getPieChartColors = () => {
         <div>
             <div class="piechart" style={{backgroundImage: pieChartValues}}></div>
         </div>
+        <p>Kakediagrammet viser <br></br>alle fargene dine samlet <br></br>:) <br></br><br></br> Psst! Flere charts kommer</p>
     </div>
   );
 };
