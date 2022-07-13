@@ -6,6 +6,7 @@ import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useTranslation } from 'react-i18next';
 import { contrastColors } from "../../varialbes";
+import { wcagRules as w } from "../../varialbes";
 
 const ContrastSummary = ({ contrastMatrix }) => {
   const { t } = useTranslation();
@@ -24,10 +25,10 @@ const ContrastSummary = ({ contrastMatrix }) => {
 
   useEffect(() => {
     setBadContrasts("");
-    setBadContrasts(getContrastList(contrastMatrix, 1.0, 3.0));
-    setAANontextContrasts(getContrastList(contrastMatrix, 3.0, 4.5)); //https://www.uutilsynet.no/wcag-standarden/1411-kontrast-ikke-tekstlig-innhold-niva-aa/145
-    setAAContrasts(getContrastList(contrastMatrix, 4.5, 7));
-    setAAAContrasts(getContrastList(contrastMatrix, 7, 21.0));
+    setBadContrasts(getContrastList(contrastMatrix, w.contrastMin, w.lowContrastMax));
+    setAANontextContrasts(getContrastList(contrastMatrix, w.aaNonTextMin, w.aaNonTextMax)); //https://www.uutilsynet.no/wcag-standarden/1411-kontrast-ikke-tekstlig-innhold-niva-aa/145
+    setAAContrasts(getContrastList(contrastMatrix, w.aaTextMin, w.aaTextMax));
+    setAAAContrasts(getContrastList(contrastMatrix, w.aaaTextMin, w.contrastMax));
   }, [contrastMatrix]);
 
   return (
