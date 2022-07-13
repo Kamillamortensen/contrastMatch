@@ -129,11 +129,11 @@ function Home() {
             <MockupGraph colorList={colorList}></MockupGraph>
           </div>
         </div>
-        <div>
+        {/*<div>
           <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
-        </div>
+        </div>*/}
         <Footer
-        backgroundColor="#f8f5f2"
+        backgroundColor="#fcfcfc"
         textColor="#1f1235"  
         text={t('footer-text')}
         />
