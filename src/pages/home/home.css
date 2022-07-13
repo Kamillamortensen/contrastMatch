@@ -72,6 +72,9 @@
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: baseline;
+  gap: .2rem;
+  margin:0;
 }
 
 button {
@@ -119,6 +122,9 @@ button:hover {
 
 .see-contrast-heading{
   display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: .2rem;
   justify-content: flex-end;
   padding-right: 4rem;
   margin:0;
