@@ -10,6 +10,8 @@
     "about-wcag-low" : "Verdier under 3. Anbefales ikke til bruk på tekst eller andre sentrale komponenter.",
     "table-section-title" : "Se kontrastnivå for fargepalettet ditt",
     "mockup-section-title" : "Test fargene i praksis!",
+    "contrast-table-title"  : "Visning av valgte fargekombinasjoner med kontrastverdier i en matrise", 
+    "contrast-table-radiobutton-title" :  "Velg visning for tabellen", 
 
 
 
