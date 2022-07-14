@@ -41,12 +41,12 @@ const ContrastTable = ({ contrastMatrix }) => {
     <div className="contrastTable" aria-describedby={t('contrast-table-title')}>
         <fieldset className="tableHeader">
           <legend hidden>{t('contrast-table-radiobutton-title')}</legend>
-          <label for="html" onClick={()=>setColorsInTable(false)}>
-            <input type="radio" className="radio-button" checked={colorsInTable ? false : true} name="table-view"/>
+          <label for={t('view-contrast-level-by-color')} onClick={()=>setColorsInTable(false)}>
+            <input type="radio" className="radio-button" checked={colorsInTable ? false : true} name={t('view-contrast-level-by-color')}/>
             {t('view-contrast-level-by-color')}
           </label>
           <label for={t('view-chosen-colors')}  onClick={()=>setColorsInTable(true)}>
-            <input type="radio"  className="radio-button"  checked={colorsInTable ? true : false} name="table-view"/>
+            <input type="radio"  className="radio-button"  checked={colorsInTable ? true : false} name={t('view-chosen-colors')}/>
             {t('view-chosen-colors')}
           </label>       
         </fieldset> 
