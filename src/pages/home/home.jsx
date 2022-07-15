@@ -20,6 +20,7 @@ import HandymanIcon from '@mui/icons-material/Handyman';
 import { contrastColors } from "../../varialbes";
 import ContrastSummary from "../../components/contrastSummary/contrastSummary";
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
+import MockupButton from "../../components/mockupButton/mockupButton";
 
 function Home() {
   const { t } = useTranslation();
@@ -130,6 +131,7 @@ function Home() {
             titleIcon={<AutoAwesomeIcon/>} color1={colorList[3]} color2={colorList[2]}></MockupTextBox>
             <MockupIllustration colorList={colorList} color1={colorList[3]} color2={colorList[2]}></MockupIllustration>
             <MockupGraph colorList={colorList}></MockupGraph>
+            <MockupButton colorList={colorList} contrastMatrix={contrastMatrix} color1={colorList[3]} color2={colorList[2]}></MockupButton>
           </div>
         </div>
         <div>
