@@ -25,8 +25,15 @@
     align-items: center;
 }
 
+.mockupn{
+  -webkit-transition: box-shadow .1s ease-in-out;
+  -moz-transition: box-shadow .1s ease-in-out;
+  -o-transition: box-shadow .1s ease-in-out;
+  -ms-transition: box-shadow .1s ease-in-out;
+  transition: box-shadow .1s ease-in-out;
+}
+
 .mockupn:hover{
-  font-size: 103%;
-  box-shadow: 2px 2px;
+  box-shadow: 1px 1px;
 }
   
