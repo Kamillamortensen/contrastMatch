@@ -19,6 +19,7 @@ import ColorLensIcon from '@mui/icons-material/ColorLens';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import { contrastColors } from "../../varialbes";
 import ContrastSummary from "../../components/contrastSummary/contrastSummary";
+import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
 
 function Home() {
   const { t } = useTranslation();
@@ -132,6 +133,11 @@ function Home() {
           </div>
         </div>
         <div>
+          <div className="see-contrast-heading">
+            <InventoryRoundedIcon/>
+            <h1 className="big-title">{t('recommendation-section-title')}</h1>
+            
+          </div>
           {/*<MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>*/}
           <ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary>
         </div>
