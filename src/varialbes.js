@@ -16,3 +16,8 @@ export const wcagRules = {
     aaaTextMin: 7.0,
     contrastMax: 21.0
 }
+
+export const colorBarFormats = {
+ "HORIZONTAL" : "horizontal",
+ "VERTICAL": "vertical"
+}
