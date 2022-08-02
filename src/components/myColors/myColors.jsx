@@ -32,7 +32,7 @@ const MyColors = ({ colorList, setColorList, direction, setDirection }) => {
 
   return (
     <div className={direction === colorBarFormats.VERTICAL ? "vertical-bar" : "horizontal-bar"}  aria-label={t('my-colors-heading')}>
-      <button className="button" onClick={changeFormat}>toggle</button>
+      <button className="toggle-button" onClick={changeFormat}>toggle</button>
       <ul className="my-color-list">
         {Object.values(colorList).map((color, index) => (
           <li className="my-color-list-item">

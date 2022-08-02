@@ -164,7 +164,7 @@ function Home() {
           </div>
         </div>
         <Footer
-        backgroundColor="#fcfcfc"
+        backgroundColor="#f8f5f2"
         textColor="#1f1235"  
         text={t('footer-text')}
         />
