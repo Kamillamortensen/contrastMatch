@@ -13,7 +13,7 @@
   display: grid;
   overflow: hidden;
   grid-template-areas: "colorbar" "content";
-  grid-template-rows: 185px auto;
+  grid-template-rows: fit-content fit-content;
   height: 100vh;
   background-color: var(--base-color-white);
 }

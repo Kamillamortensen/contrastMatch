@@ -1,7 +1,6 @@
 @import "../../variables.css";
 
 .vertical-bar {
-  background-color: orange;
   min-height: 100vh;
   height: fit-content;
   background-color: var(--base-color-light-grey);
@@ -13,7 +12,6 @@
   border-right: 2px groove var(--base-color-dark-grey);
 }
 .horizontal-bar {
-  background-color: yellow;
   min-width: 100vw;
   height: fit-content;
   background-color: var(--base-color-light-grey);
@@ -21,9 +19,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   border-bottom: 2px groove var(--base-color-dark-grey);
-  z-index: 10;
 }
 
 .my-color-list {
