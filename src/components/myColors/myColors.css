@@ -1,19 +1,19 @@
 @import "../../variables.css";
 
 .vertical-bar {
-  min-height: 100vh;
-  height: fit-content;
+  height: 100vh;
+  width: fit-content;
   background-color: var(--base-color-light-grey);
   display: grid;
-  overflow: hidden;
   grid-template-areas: "togglebutton" "colorlist" "addbutton";
-  grid-template-rows: 15% 75% 10%;
-  align-items: start;
+  grid-template-rows: 10% 75% 15%;
+  justify-content: start;
+  gap: 1rem;
   border-right: 2px groove var(--base-color-dark-grey);
 }
 
 .horizontal-bar {
-  min-width: 100vw;
+  width: 100vw;
   height: 100px;
   background-color: var(--base-color-light-grey);
   display: grid;
@@ -24,12 +24,25 @@
   border-bottom: 2px groove var(--base-color-dark-grey);
 }
 
-.my-color-list {
+.vertical-color-list {
   grid-area: colorlist;
+  display: flex;
+  flex-direction: column;
   margin: 1rem;
   gap: 1rem;
-  flex-wrap: wrap;
   padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.horizontal-color-list {
+  grid-area: colorlist;
+  flex-wrap: nowrap;
+  margin: 1rem;
+  gap: 1rem;
+  padding: 0;
+  overflow-y: hidden; 
+  overflow-x: scroll;
 }
 
 .my-color-list-item {
@@ -45,7 +58,7 @@
 
 .toggle-button {
   grid-area: togglebutton;
-  width: 150px;
+  width: fit;
   margin: 1rem; 
 }
 

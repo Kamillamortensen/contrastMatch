@@ -4,7 +4,7 @@
   display: grid;
   overflow: hidden;
   grid-template-areas: "colorbar content";
-  grid-template-columns: 185px auto;
+  grid-template-columns: auto auto;
   height: 100vh;
   background-color: var(--base-color-white);
 }

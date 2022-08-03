@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import ColorInput from "../colorInput/colorInput";
 import { getColorsFromDefaultPalette } from "../../contrast-calculations";
 import { useTranslation } from 'react-i18next';
-import { colorBarFormats } from "../../varialbes";
+import { colorBarFormats, numberOfColors } from "../../varialbes";
 
 const MyColors = ({ colorList, setColorList, direction, setDirection }) => {
   const { t } = useTranslation();
@@ -15,17 +15,22 @@ const MyColors = ({ colorList, setColorList, direction, setDirection }) => {
     );
   };
 
+  /** Legg til farge hvis vi ikke har nådd maks antall */
   const addColorValue = () => {
-    if(colorList.length < 8)
+    if(colorList.length < numberOfColors.MAX)
     setColorList((colorList) => [...colorList, getColorsFromDefaultPalette(1, colorList)[0]])
   }
 
+  /** Fjern farge hvis det er flere enn minimum antall */
   const removeColorValue = (index) => {
     setColorList((colorList) =>
-      colorList.filter((_, i) => i !== index.index || colorList.length === 2)
+      colorList.filter((_, i) => i !== index.index || colorList.length === numberOfColors.MIN)
     );
   };
 
+  /** Dette er endring mellom å ha farge-baren på toppen av siden (horizontal) 
+   * eller til venstre (vertical). 
+   */
   const changeFormat = () => {
     setDirection(direction === colorBarFormats.VERTICAL ? colorBarFormats.HORIZONTAL : colorBarFormats.VERTICAL)
   }
@@ -33,7 +38,7 @@ const MyColors = ({ colorList, setColorList, direction, setDirection }) => {
   return (
     <div className={direction === colorBarFormats.VERTICAL ? "vertical-bar" : "horizontal-bar"}  aria-label={t('my-colors-heading')}>
       <button className="toggle-button" onClick={changeFormat}>toggle</button>
-      <ul className="my-color-list">
+      <ul className={direction === colorBarFormats.VERTICAL ?  "vertical-color-list" :  "horizontal-color-list"}>
         {Object.values(colorList).map((color, index) => (
           <li className="my-color-list-item">
               <ColorInput
