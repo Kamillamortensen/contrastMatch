@@ -139,14 +139,16 @@ function Home() {
             <MockupButton colorList={colorList} contrastMatrix={contrastMatrix} color1={colorList[3]} color2={colorList[2]}></MockupButton>
           </div>
         </div>
-        <div>
+        {/* 
+         <div>
           <div className="see-contrast-heading">
             <InventoryRoundedIcon/>
             <h1 className="big-title">{t('recommendation-section-title')}</h1>
           </div>
-          {/*<MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>*/}
+          <MockupPage contrastMatrix={contrastMatrix} colorList={colorList}></MockupPage>
           <ContrastSummary contrastMatrix={contrastMatrix}></ContrastSummary>
         </div>
+        */}
         <div className="summarySection">
           <div className="see-contrast-heading">
             <InventoryRoundedIcon/>
