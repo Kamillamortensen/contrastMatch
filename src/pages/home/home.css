@@ -179,7 +179,7 @@
 
 .speech-bubble {
   background: var(--base-color-pink);
-  color: var(--base-color-black);
+  color: black;
   font-size: 14px;
   line-height: 2em;
   margin-bottom: 1em;
@@ -205,4 +205,8 @@
 	left: 50%;
 	width: 0;
 	height: 0;
+}
+
+.speech-bubble-text {
+  font-weight: normal;
 }
