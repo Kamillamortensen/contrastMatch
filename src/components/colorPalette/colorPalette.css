@@ -1,0 +1,11 @@
+@import "../../variables.css";
+
+.color-palette-container {
+    background-color: var(--base-color-white);
+    border-radius: 4px;
+}
+
+.color-palette-color {
+    width: 25px;
+    height: 25px;
+}

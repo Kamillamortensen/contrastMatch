@@ -143,3 +143,17 @@
   align-items: baseline;
 }
 
+.default-palettes-container{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.default-palette-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}

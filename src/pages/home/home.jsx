@@ -2,7 +2,7 @@ import "./home.css";
 import React, { useEffect, useState } from "react";
 import ContrastTable from "../../components/contrastTable/contrastTable";
 import MockupTextBox from "../../components/mockupTextBox/mockupTextBox";
-import MockupIllustration from "../../components/MockupIllustration/mockupIllustration"
+import MockupIllustration from "../../components/mockupIllustration/mockupIllustration"
 import MyColors from "../../components/myColors/myColors";
 import MockupGraph from "../../components/mockupGraph/mockupGraph";
 import Footer from "../../components/footer/footer";
@@ -14,14 +14,16 @@ import InvertColorsRoundedIcon from '@mui/icons-material/InvertColorsRounded';
 import TextFieldsIcon from '@mui/icons-material/TextFields';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import ColorizeIcon from '@mui/icons-material/Colorize';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
 import HandymanIcon from '@mui/icons-material/Handyman';
-import { contrastColors, colorBarFormats, wcagRules as w } from "../../variables";
+import { contrastColors, colorBarFormats, defaultColorPalettes, wcagRules as w } from "../../variables";
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
 import MockupButton from "../../components/mockupButton/mockupButton";
 import ContrastSummaryBox from "../../components/contrastSummaryBox/contrastSummaryBox";
 import ContrastSummary from "../../components/contrastSummary/contrastSummary";
+import ColorPalette from "../../components/colorPalette/colorPalette";
 
 function Home() {
   const { t } = useTranslation();
@@ -115,6 +117,20 @@ function Home() {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="tableSection">
+          <fieldset className="tableSection default-palettes-container">
+            <legend className="mockup-section-title">
+              <ColorizeIcon></ColorizeIcon>
+              <h1 className="big-title">{t('try-default-palettes')}</h1>
+            </legend>
+            {Object.values(defaultColorPalettes).map((palette, index) => (
+              <div className="default-palette-container" onClick={()=>setColorList(palette)}>
+                <input type="radio"  className="radio-button"  checked={colorList == palette ? true : false} id={t('try-default-palettes')}/>   
+                <ColorPalette colors={palette}></ColorPalette>
+              </div>
+            ))}
+          </fieldset>
         </div>
         <div className="tableSection">
           <div className="see-contrast-heading">
