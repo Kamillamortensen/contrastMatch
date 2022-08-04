@@ -96,7 +96,6 @@ function Home() {
               <button className="primaryButton">{t('about-button-linking-to-wcag')}</button>
             </a> 
             </div>
-            
           </div>
           <div className="aboutSectionRight">
             <ul className="aboutSectionTextBoxContainer" aria-label={t('about-wcag-list-heading')}>
@@ -119,8 +118,8 @@ function Home() {
             </ul>
           </div>
         </div>
-        <div className="tableSection">
-          <fieldset className="tableSection default-palettes-container">
+        <div className="colorPaletteSection">
+          <fieldset className="default-palettes-container">
             <legend className="mockup-section-title">
               <ColorizeIcon></ColorizeIcon>
               <h1 className="big-title">{t('try-default-palettes')}</h1>
@@ -132,6 +131,11 @@ function Home() {
               </div>
             ))}
           </fieldset>
+          <div className="speech-bubble">
+            <h2 className="speech-bubble-text">
+            {t('try-palette-or-try-yourself')}
+            </h2>
+          </div>
         </div>
         <div className="tableSection">
           <div className="see-contrast-heading">
@@ -182,7 +186,7 @@ function Home() {
           </div>
         </div>
         <Footer
-        backgroundColor="#f8f5f2"
+        backgroundColor="#fcfcfc"
         textColor="#1f1235"  
         text={t('footer-text')}
         />

@@ -5,9 +5,11 @@
     border-radius: 4px;
     display: flex;
     flex-direction: row;
+    height: 30px;
+    width: fit-content;
 }
 
 .color-palette-color {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: inherit;
 }
