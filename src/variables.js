@@ -32,8 +32,8 @@ export const defaultColorPalette = [
 ]
 
 export const defaultColorPalettes = [
-    ["#1f1235", "#ea5553", "#f3f3f3", "#fbdd74"],
-    ["#FDF5DF", "#5EBEC4", "#F92C85", "#121635"],
-    ["#A0AECD", "#000000", "#f3f3f3"],
-    ["#490B3D", "#BD1E51", "#F1B814", "#ffffff", "#121212" ]
+    ["#010101", "#69c9d0", "#EE1D52", "#ffffff"],
+    ["#0F0C24", "#A350A3", "#d30d4f", "#f0eef2"],
+    ["#FB8122", "#1D2228", "#E1E2E2"],
+    ["#3b5998", "#Dfe3ee", "#f7f7f7"]
 ]

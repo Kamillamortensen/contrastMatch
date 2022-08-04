@@ -96,6 +96,7 @@ function Home() {
               <button className="primaryButton">{t('about-button-linking-to-wcag')}</button>
             </a> 
             </div>
+            
           </div>
           <div className="aboutSectionRight">
             <ul className="aboutSectionTextBoxContainer" aria-label={t('about-wcag-list-heading')}>

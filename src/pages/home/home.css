@@ -146,14 +146,21 @@
 .default-palettes-container{
   display: flex;
   align-items: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: .5rem;
+  gap: .9rem;
+  width: fit-content;
 }
 
 .default-palette-container{
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.3rem;
+}
+
+
+.default-palette-container:hover {
+  transform: scale(1.04);
+  /* animation-play-state: paused; */
 }
